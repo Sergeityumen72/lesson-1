@@ -3,32 +3,12 @@
 // 782 -> 8
 // 918 -> 1
 
-
-int Prompt(string msg)
-{
-
-    Console.WriteLine($"{ msg}");
-    return Convert.ToInt32(Console.ReadLine());
-}
-int number = Prompt("Введите число");
-
-int fnumber(int number)
-{
-    while (number > 999)
+Console.WriteLine("Введите трехзначное число.");
+    while(true)
     {
-        number /= 10;
+        string input = Console.ReadLine();
+            if(!input.Equals("exit"))
+            Console.WriteLine("{0}->{1}",input, input[1]);
+        else
+            break;
     }
-    return number % 10;
-}
-
-bool check(int number)
-{
-    if (number < 100)
-        return false;
-    else return true;
-}
-
-if (check(number) != true)
-    System.Console.WriteLine("Третьей цифры нет");
-else
-    System.Console.WriteLine($"Третья цифра числа { number}является {fnumber(number)}");
